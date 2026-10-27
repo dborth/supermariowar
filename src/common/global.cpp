@@ -15,7 +15,10 @@
 #ifdef __ANDROID__
 std::string RootDataDirectory = GetHomeDirectory() + "data";
 #else
-std::string RootDataDirectory = GetRootDirectory() + "data";
+// Resolved lazily on first use (see convertPath): SDL_GetBasePath() is cached by SDL, and on
+// some platforms (Wii) it is only meaningful after SDL_RunApp() has initialised the filesystem,
+// which happens after static initialisers run.
+std::string RootDataDirectory;
 #endif
 
 CResourceManager *rm;

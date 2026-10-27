@@ -112,6 +112,9 @@ std::string convertPath(const std::string& source)
     static bool are_paths_initialized = false;
 
     if (!are_paths_initialized) {
+        if (RootDataDirectory.empty())
+            RootDataDirectory = GetRootDirectory() + "data";
+
 //		#ifdef PREFIXPATH
 			SMW_Root_Data_Dir = RootDataDirectory;
 //		#endif

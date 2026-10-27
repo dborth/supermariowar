@@ -11,7 +11,7 @@
 #include <windows.h>
 #endif
 
-#if defined(unix) || defined(__unix__) || defined(__unix) || defined(__APPLE__)
+#if defined(unix) || defined(__unix__) || defined(__unix) || defined(__APPLE__) || defined(__wii__) || defined(__gamecube__)
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <unistd.h>
