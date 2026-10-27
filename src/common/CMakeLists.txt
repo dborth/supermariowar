@@ -25,6 +25,7 @@ add_library(CommonFiles STATIC
     gfx/gfxFont.h
     gfx/gfxPalette.cpp
     gfx/gfxPalette.h
+    gfx/gfxPixelFormat.h
     gfx/gfxSDL.cpp
     gfx/gfxSDL.h
     gfx/gfxSprite.cpp

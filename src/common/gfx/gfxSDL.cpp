@@ -1,5 +1,6 @@
 #include "gfxSDL.h"
 
+#include "gfxPixelFormat.h"
 #include "path.h"
 
 #include <SDL3_image/SDL_image.h>
@@ -81,7 +82,7 @@ SDL_Renderer* createRenderer(SDL_Window* window)
 
 SDL_Surface* createScreenSurface()
 {
-    SDL_Surface* surface = SDL_CreateSurface(GFX_SCREEN_W, GFX_SCREEN_H, SDL_PIXELFORMAT_ARGB8888);
+    SDL_Surface* surface = SDL_CreateSurface(GFX_SCREEN_W, GFX_SCREEN_H, GFX_PIXEL_FORMAT);
     if (!surface)
         throw_error("Couldn't create video buffer: {}", SDL_GetError());
 
@@ -91,7 +92,7 @@ SDL_Surface* createScreenSurface()
 SDL_Texture* createScreenTexture(SDL_Renderer* renderer)
 {
     SDL_Texture* texture = SDL_CreateTexture(renderer,
-        SDL_PIXELFORMAT_ARGB8888,
+        GFX_PIXEL_FORMAT,
         SDL_TEXTUREACCESS_STREAMING,
         GFX_SCREEN_W, GFX_SCREEN_H);
     if (!texture)

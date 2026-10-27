@@ -1,6 +1,7 @@
 #include "gfxSprite.h"
 
 #include "gfx.h"
+#include "gfxPixelFormat.h"
 
 #include <SDL3_image/SDL_image.h>
 
@@ -89,7 +90,7 @@ gfxSprite::gfxSprite(SdlSurfacePtr image, std::optional<int> wrap)
 
 gfxSprite gfxSprite::blank(unsigned w, unsigned h, std::optional<int> wrap)
 {
-    auto surf = SdlSurfacePtr(SDL_CreateSurface(w, h, SDL_PIXELFORMAT_ARGB8888));
+    auto surf = SdlSurfacePtr(SDL_CreateSurface(w, h, GFX_PIXEL_FORMAT));
     if (!surf)
         throw std::format("Couldn't create blank surface: {}", SDL_GetError());
 
