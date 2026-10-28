@@ -11,7 +11,7 @@
 /// 16-bit ARGB1555 format is used instead; it maps cleanly to the GX texture
 /// format RGB5A3, and the game only needs 1-bit transparency.
 #if defined(SDL_PLATFORM_OGC)
-constexpr SDL_PixelFormat GFX_PIXEL_FORMAT = SDL_PIXELFORMAT_ARGB1555;
+constexpr SDL_PixelFormat GFX_PIXEL_FORMAT = SDL_PIXELFORMAT_RGB565;
 #else
 constexpr SDL_PixelFormat GFX_PIXEL_FORMAT = SDL_PIXELFORMAT_ARGB8888;
 #endif
