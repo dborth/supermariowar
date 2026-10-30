@@ -76,7 +76,7 @@ else()
 	set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c99 -O3")
 
 	# Strip binaries
-	if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU")
+	if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND NOT CMAKE_SYSTEM_NAME MATCHES "^(NintendoWii|CafeOS)$")
 		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -s")
 		set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -s")
 	endif()
